@@ -10,6 +10,12 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    // relacion de uno a muchos
+    public function pedidos()
+    {
+        return $this->hasMany(Pedido::class);
+    }
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -21,6 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'telefono',
     ];
 
     /**

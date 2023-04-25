@@ -13,11 +13,16 @@ return new class extends Migration
     {
         Schema::create('platos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_plato');
-            $table->text('descripción');
-            $table->decimal('precio', 8, 2);
-            $table->softDeletes();
+            $table->string('name');
+            $table->text('description');
+            $table->unsignedBigInteger('category_id');
+            $table->boolean('disponibilidad')->default(true);
             $table->timestamps();
+            // relacion de muchos a muchos
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
         });
     }
 
