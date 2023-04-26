@@ -4,14 +4,13 @@ import delivery_logo from './../assets/svg/delivery_logo.svg'
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
   return (
     <>
-      <Head title="Welcome" />
       <div className="relative flex justify-center items-center min-h-screen bg-dots-darker bg-center bg-gradient-to-t from-slate-200 to-white dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
         <div className="fixed top-0 right-0 p-6 text-right">
         </div>
         <div className='flex flex-col items-center self-center'>
           <img src={delivery_logo} className='w-64 sm:w-auto transition-all' />
-          <h1 class="text-4xl font-extrabold dark:text-white text-center sm:text-6xl transition-all">Delivery Restaurant</h1>
-          <p class="mb-6 text-sm mx-10 mt-1 sm:mt-5 font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 text-center">La mejor comida, en la puerta de tu casa, tu sabor favorito a solo un clic de distancia</p>
+          <h1 className="text-4xl font-extrabold dark:text-white text-center sm:text-6xl transition-all">Delivery Restaurant</h1>
+          <p className="mb-6 text-sm mx-10 mt-1 sm:mt-5 font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 text-center">La mejor comida, en la puerta de tu casa, tu sabor favorito a solo un clic de distancia</p>
           <div className='flex flex-col md:flex-row gap-5 md:gap-10'>
             {
               auth.user ? (
@@ -39,6 +38,11 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
               )
             }
           </div>
+        </div>
+        <div className='absolute flex justify-around md:justify-center w-full md:flex-row md:gap-4 bottom-0 text-sm font-semibold bg-slate-800 text-white bg-opacity-60'>
+          <p>Laravel: {laravelVersion}</p>
+          <p>Version de PHP: {phpVersion}</p>
+          <p className='text-green-500'>Copyright © RoyerRutti</p>
         </div>
       </div>
     </>

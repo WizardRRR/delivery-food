@@ -35,7 +35,7 @@ export default function Login({ status, canResetPassword }) {
           <section className="relative flex h-32 items-end order-1 bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
             <img
               alt="Night"
-              src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="https://travejante.com.br/wp-content/uploads/2021/05/delivery-em-sao-paulo-2021-1200x800.png"
               className="absolute inset-0 h-full w-full object-cover opacity-80"
             />
           </section>
@@ -60,7 +60,7 @@ export default function Login({ status, canResetPassword }) {
                   <img src={delivery_logo} alt="" />
                 </Link>
                 <div className="col-span-6">
-                  <label for="email" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                     Correo Electronico
                   </label>
 
@@ -79,7 +79,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="col-span-6">
-                  <label for="password" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                     Contraseña
                   </label>
                   <TextInput
@@ -94,18 +94,18 @@ export default function Login({ status, canResetPassword }) {
 
                   <InputError message={errors.password} className="mt-2" />
                 </div>
-                <div class="col-span-2">
-                  <label for="remember" class="flex gap-2">
+                <div className="col-span-2">
+                  <label htmlFor="remember" className="flex gap-2">
                     <input
                       type="checkbox"
                       id="remember"
                       name="remember"
-                      class="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm"
+                      className="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm"
                       checked={data.remember}
                       onChange={(e) => setData('remember', e.target.checked)}
                     />
 
-                    <span class="text-sm text-gray-700">
+                    <span className="text-sm text-gray-700">
                       Recuerdame
                     </span>
                   </label>

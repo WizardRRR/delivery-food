@@ -32,7 +32,7 @@ export default function Register() {
           <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
             <img
               alt="Night"
-              src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              src="https://b8t4k3f8.rocketcdn.me/wp-content/uploads/2022/04/aumentar-ventas-delivery.png"
               className="absolute inset-0 h-full w-full object-cover opacity-80"
             />
 
@@ -70,7 +70,7 @@ export default function Register() {
                   <img src={delivery_logo} alt="" />
                 </Link>
                 <div className="col-span-6">
-                  <label for="name" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                     Nombre
                   </label>
                   <TextInput
@@ -87,7 +87,7 @@ export default function Register() {
                 </div>
 
                 <div className="col-span-6">
-                  <label for="email" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                     Correo Electronico
                   </label>
 
@@ -106,7 +106,7 @@ export default function Register() {
                 </div>
 
                 <div className="col-span-6 sm:col-span-3">
-                  <label for="password" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                     Contraseña
                   </label>
                   <TextInput
@@ -124,7 +124,7 @@ export default function Register() {
 
                 <div className="col-span-6 sm:col-span-3">
                   <label
-                    for="password_confirmation"
+                    htmlFor="password_confirmation"
                     className="block text-sm font-medium text-gray-700"
                   >
                     Confirmar Contraseña
