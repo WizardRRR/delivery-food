@@ -11,31 +11,14 @@ import {
   GiNoodles,
   GiFriedFish
 } from 'react-icons/gi'
+import Reloj from "./Reloj";
 
 const Header = () => {
-  const [fecha, setFecha] = useState("");
-  const [hora, setHora] = useState("");
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      const date = new Date();
-      const optionsFecha = { day: 'numeric', month: 'long', year: 'numeric' };
-      const optionsHora = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true, locale: 'es' };
-      setFecha(date.toLocaleDateString('es-ES', optionsFecha));
-      setHora(date.toLocaleTimeString('es-ES', optionsHora));
-    }, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
-
   return (
     <header>
       {/* Title and search */}
       <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-6">
-        <div>
-          <h1 className="text-4xl text-gray-100 font-extrabold mb-2">DeliveryFood</h1>
-          <p className="text-gray-400 text-lg">{fecha}</p>
-          <p className="text-gray-400 text-lg">{hora}</p>
-        </div>
+        <Reloj></Reloj>
         <form>
           <div className="w-full relative">
             <RiSearch2Line className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" />

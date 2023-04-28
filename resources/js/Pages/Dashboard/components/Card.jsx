@@ -5,7 +5,7 @@ import axios from 'axios'
 import CardEdit from "./CardEdit";
 
 const Card = (props) => {
-  const { img, description, name, price, id, setPlatos, category_id } = props;
+  const { img, description, name, price, id, setPlatos, category_id, categoria } = props;
 
   const [showModal, setShowModal] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
@@ -26,7 +26,7 @@ const Card = (props) => {
         <p className="text-xl font-semibold">{name}</p>
         <p>{description}</p>
         <span className="text-gray-400">S/{price}</span>
-        <p className="text-gray-600"></p>
+        <p className="text-gray-400"> Categoria {categoria.nombre}</p>
         <div className="flex gap-4">
           <button
             className="hover:bg-gray-600 hover:scale-110 bg-[#262837] hover:font-bold shadow-lg px-3 py-2 flex items-center gap-2 rounded-md transition-all"
@@ -61,7 +61,15 @@ const Card = (props) => {
       {
         showModal2 && (
           <Modal onClose={setShowModal2}>
-            <CardEdit img={img} description={description} name={name} price={price} category_id={category_id} id={id} closeModal={setShowModal2} />
+            <CardEdit
+            img={img}
+            description={description}
+            name={name}
+            price={price}
+            category_id={category_id}
+            id={id}
+            categoria={categoria}
+            closeModal={setShowModal2} />
           </Modal>)
       }
     </>

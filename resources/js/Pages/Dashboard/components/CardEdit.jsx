@@ -1,11 +1,11 @@
-import { useForm } from "@inertiajs/react";
+import { useForm, usePage } from "@inertiajs/react";
 import React, { useRef } from "react";
 import { MdOutlineAddPhotoAlternate } from 'react-icons/md'
 import { MdSaveAs } from 'react-icons/md'
 import { ImCancelCircle } from 'react-icons/im'
 
-const CardEdit = ({ img, description, price, name, category_id, closeModal, id }) => {
-
+const CardEdit = ({ img, description, price, name, category_id, closeModal, id, categoria }) => {
+  const categorias = usePage().props.categorias;
   const { data, setData, errors, post } = useForm({
     nombre: name,
     descripcion: description,
@@ -16,7 +16,9 @@ const CardEdit = ({ img, description, price, name, category_id, closeModal, id }
 
   const handleUpdate = () => {
     post(`update/plato/${id}`);
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   }
 
   const handleImageChange = (e) => {
@@ -71,6 +73,15 @@ const CardEdit = ({ img, description, price, name, category_id, closeModal, id }
         type="number"
         className="bg-transparent rounded-lg text-center"
       />
+      <select className="bg-transparent rounded-lg" onChange={(e) => setData('category_id', e.target.value)}>
+        {
+          categorias.map((cat) => {
+            return (
+              <option value={cat.id} selected={category_id === cat.id ? true : false} className="bg-slate-800">{cat.nombre}</option>
+            )
+          })
+        }
+      </select>
       <div className="flex gap-4">
         <button
           className="hover:bg-gray-600 hover:scale-110 bg-[#262837] hover:font-bold shadow-lg px-3 py-2 flex items-center gap-2 rounded-md transition-all"

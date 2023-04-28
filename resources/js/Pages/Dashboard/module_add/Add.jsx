@@ -3,6 +3,7 @@ import { useForm } from '@inertiajs/react';
 import React, { useEffect, useRef, useState } from 'react'
 import TextInput from './../components/TextInput'
 import { MdOutlineAddPhotoAlternate } from 'react-icons/md'
+import Reloj from '../components/Reloj';
 
 function Add(props) {
   const { data, setData, errors, post } = useForm({
@@ -20,19 +21,7 @@ function Add(props) {
     post(route('store.plato'));
   };
 
-  const [fecha, setFecha] = useState("");
-  const [hora, setHora] = useState("");
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      const date = new Date();
-      const optionsFecha = { day: 'numeric', month: 'long', year: 'numeric' };
-      const optionsHora = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true, locale: 'es' };
-      setFecha(date.toLocaleDateString('es-ES', optionsFecha));
-      setHora(date.toLocaleTimeString('es-ES', optionsHora));
-    }, 100000);
-    return () => clearInterval(intervalId);
-  }, []);
 
   const handleImageChange = (e) => {
     let foto = e.target.files[0];
@@ -46,11 +35,7 @@ function Add(props) {
   return (
     <>
       <DashboardLayout>
-        <div>
-          <h1 className="text-4xl text-gray-100 font-extrabold mb-2">DeliveryFood</h1>
-          <p className="text-gray-400 text-lg">{fecha}</p>
-          <p className="text-gray-400 text-lg">{hora}</p>
-        </div>
+        <Reloj></Reloj>
         <hr className='mt-4 mb-10' />
         <p className=" text-center mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl text-gray-300">Añade un nuevo plato</p>
         <div className='mt-10 flex flex-col md:flex-row justify-center'>

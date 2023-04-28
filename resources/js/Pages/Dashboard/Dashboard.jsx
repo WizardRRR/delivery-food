@@ -32,6 +32,7 @@ function Dashboard(props) {
                   name={plato.name}
                   description={plato.description}
                   price={plato.precio}
+                  categoria={plato.categoria}
                   setPlatos={setPlatos}
                 />
               )

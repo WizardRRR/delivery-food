@@ -10,7 +10,7 @@ class Plato extends Model
     // relacion de muchos a uno
     public function categoria()
     {
-        return $this->belongsTo(Categoria::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
     // relacion de muchos a muchos
     public function pedidos()

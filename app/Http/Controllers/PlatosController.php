@@ -15,8 +15,10 @@ class PlatosController extends Controller
      */
     public function index()
     {
-        $platos = Plato::all();
-        return Inertia::render('Dashboard/Dashboard', compact('platos'));
+        $categorias = Category::all();
+        $platos = Plato::with('categoria')->get();
+        // dd($platos);
+        return Inertia::render('Dashboard/Dashboard', compact('platos','categorias'));
     }
 
     /**
@@ -79,7 +81,6 @@ class PlatosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-      // dd($request);
         $plato = Plato::findOrFail($id);
 
         $request->validate([
@@ -90,11 +91,6 @@ class PlatosController extends Controller
             'category_id' => 'required|exists:categories,id',
         ]);
 
-        $plato->name = $request->nombre;
-        $plato->description = $request->descripcion;
-        $plato->category_id = $request->category_id;
-        $plato->precio = $request->precio;
-
         if ($request->hasFile('foto')) {
             Storage::delete($plato->foto);
             $foto = $request->file('foto');
@@ -103,9 +99,14 @@ class PlatosController extends Controller
             $plato->foto = Storage::url($fotoPath);
         }
 
+        $plato->name = $request->nombre;
+        $plato->description = $request->descripcion;
+        $plato->category_id = $request->category_id;
+        $plato->precio = $request->precio;
+
         $plato->save();
 
-        return redirect()->route('dashboard');
+        return back();
     }
 
     /**
