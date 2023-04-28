@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
+            $table->decimal('precio', 8, 2); // 8 dígitos en total y 2 decimales
+            $table->string('foto'); // 8 dígitos en total y 2 decimales
             $table->unsignedBigInteger('category_id');
             $table->boolean('disponibilidad')->default(true);
             $table->timestamps();
-            // relacion de muchos a muchos
+            // relacion de muchos a uno
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')
