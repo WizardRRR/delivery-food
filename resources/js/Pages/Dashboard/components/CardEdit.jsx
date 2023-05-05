@@ -6,6 +6,7 @@ import { ImCancelCircle } from 'react-icons/im'
 
 const CardEdit = ({ img, description, price, name, category_id, closeModal, id, categoria }) => {
   const categorias = usePage().props.categorias;
+
   const { data, setData, errors, post } = useForm({
     nombre: name,
     descripcion: description,

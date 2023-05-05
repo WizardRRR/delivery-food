@@ -18,7 +18,7 @@ class PlatosController extends Controller
         $categorias = Category::all();
         $platos = Plato::with('categoria')->get();
         // dd($platos);
-        return Inertia::render('Dashboard/Dashboard', compact('platos','categorias'));
+        return Inertia::render('Dashboard/Dashboard', compact('platos', 'categorias'));
     }
 
     /**
@@ -82,7 +82,6 @@ class PlatosController extends Controller
     public function update(Request $request, string $id)
     {
         $plato = Plato::findOrFail($id);
-
         $request->validate([
             'nombre' => 'required|max:255',
             'descripcion' => 'required',
