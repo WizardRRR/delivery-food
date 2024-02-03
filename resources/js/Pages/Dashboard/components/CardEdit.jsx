@@ -1,5 +1,5 @@
-import { useForm, usePage } from "@inertiajs/react";
-import React, { useRef } from "react";
+import { useForm, usePage } from "@inertiajs/react"
+import { useRef } from "react"
 import { MdOutlineAddPhotoAlternate } from 'react-icons/md'
 import { MdSaveAs } from 'react-icons/md'
 import { ImCancelCircle } from 'react-icons/im'
@@ -26,6 +26,7 @@ const CardEdit = ({ img, description, price, name, category_id, closeModal, id, 
     let foto = e.target.files[0];
     setData("foto", foto);
   };
+
   const inputRef = useRef(null); // Referencia al input para subir las imágenes
   const handleClickRef = () => {
     inputRef.current.click(); // Al hacer click en el botón se ejecutará el input
