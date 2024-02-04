@@ -1,7 +1,7 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "description": "sistem-restaurant-delivery",
+    "description": "DeliveryFood",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
