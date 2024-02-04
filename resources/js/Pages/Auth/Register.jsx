@@ -80,6 +80,7 @@ export default function Register() {
                 <CustomInput
                   containerClassName='col-span-6'
                   label='Correo electronico'
+                  type='email'
                   required
                   value={data.email}
                   error={errors.email}
@@ -89,6 +90,7 @@ export default function Register() {
                   containerClassName='col-span-6 sm:col-span-3'
                   label='Contraseña'
                   required
+                  type='password'
                   value={data.password}
                   error={errors.password}
                   onChange={(e) => setData('password', e.target.value)}
@@ -97,6 +99,7 @@ export default function Register() {
                   containerClassName='col-span-6 sm:col-span-3'
                   label='Confirmar contraseña'
                   required
+                  type='password'
                   value={data.password_confirmation}
                   error={errors.password_confirmation}
                   onChange={(e) => setData('password_confirmation', e.target.value)}

@@ -33,10 +33,10 @@ DB_PASSWORD=****
 
 ## Construido con 🛠️
 
-- [Laravel](http://www.dropwizard.io/1.0.2/docs/) - Framework de php
-- [React](https://maven.apache.org/) - Framework para el frontend
-- [InertiaJS](https://rometools.github.io/rome/) - Usado para conectar backend y frontend
-- [TailwindCSS](https://rometools.github.io/rome/) - Clases de utilidad CSS
+- [Laravel](https://laravel.com/docs/10.x/readme) - Framework de php
+- [React](https://react.dev/) - Framework para el frontend
+- [InertiaJS](https://inertiajs.com/server-side-rendering) - Usado para conectar backend y frontend
+- [TailwindCSS](https://tailwindcss.com/) - Clases de utilidad CSS
 
 ## Autor ✒️
 
